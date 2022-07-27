@@ -1,0 +1,56 @@
+﻿<local:BasePage
+    x:Class="KbStats.Views.StatisticsView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:KbStats.Views"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    xmlns:chart="using:Syncfusion.UI.Xaml.Charts"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <StackPanel>
+        <TextBlock Text="All the keyboard stats that you need:" FontSize="35"/>
+        <TextBlock Text="{Binding Stats}"/>
+
+        <chart:SfCartesianChart Header="CPS"
+                                Background="Gray">
+            
+            <chart:SfCartesianChart.XAxes>
+                <chart:CategoryAxis Header="Interval Lengths (seconds)"
+                                    IsIndexed="True"/>
+            </chart:SfCartesianChart.XAxes>
+
+            <chart:SfCartesianChart.YAxes>
+                <chart:NumericalAxis Header="CPS"
+                                     AutoScrollingDelta="3"/>
+            </chart:SfCartesianChart.YAxes>
+
+            <chart:SplineSeries ItemsSource="{Binding CurrentInterval}"
+                                XBindingPath="Duration.TotalSeconds"
+                                YBindingPath="Cps">
+            </chart:SplineSeries>
+            
+        </chart:SfCartesianChart>
+
+        <chart:SfCartesianChart Header="Gross WPM"
+                                Background="Gray">
+            
+            <chart:SfCartesianChart.XAxes>
+                <chart:CategoryAxis Header="Interval Lengths (seconds)"
+                                    IsIndexed="True"/>
+            </chart:SfCartesianChart.XAxes>
+
+            <chart:SfCartesianChart.YAxes>
+                <chart:NumericalAxis Header="Gross WPM"/>
+            </chart:SfCartesianChart.YAxes>
+
+            <chart:SplineSeries ItemsSource="{Binding CurrentInterval}"
+                                XBindingPath= "Duration.TotalSeconds"
+                                YBindingPath= "GrossWpm">
+            </chart:SplineSeries>
+            
+        </chart:SfCartesianChart>
+    
+    </StackPanel>
+</local:BasePage>

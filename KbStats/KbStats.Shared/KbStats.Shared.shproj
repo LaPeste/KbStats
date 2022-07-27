@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>6279c845-92f8-4333-ab99-3d213163593c</ProjectGuid>
+    <MinimumVisualStudioVersion>14.0</MinimumVisualStudioVersion>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\CodeSharing\Microsoft.CodeSharing.Common.Default.props" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\CodeSharing\Microsoft.CodeSharing.Common.props" />
+  <PropertyGroup />
+  <Import Project="KbStats.Shared.projitems" Label="Shared" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\CodeSharing\Microsoft.CodeSharing.CSharp.targets" />
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Views\BasePage.xaml" />
+    <UpToDateCheckInput Remove="Views\BlankPage1.xaml" />
+    <UpToDateCheckInput Remove="Views\BlankPage2.xaml" />
+    <UpToDateCheckInput Remove="Views\StatisticsView.xaml" />
+  </ItemGroup>
+  <ItemGroup>
+    <_Globbed_Compile Remove="Core\CommunicationLayer.cs" />
+    <_Globbed_Compile Remove="Core\ConsumerThread.cs" />
+    <_Globbed_Compile Remove="Core\Utils\Constants.cs" />
+    <_Globbed_Compile Remove="Core\Utils\Logger.cs" />
+    <_Globbed_Compile Remove="Models\BlankPage1.xaml.cs" />
+    <_Globbed_Compile Remove="Models\IntervalStatistics.cs" />
+    <_Globbed_Compile Remove="ViewModels\BaseViewModel.cs" />
+    <_Globbed_Compile Remove="ViewModels\MainPageViewModel.cs" />
+    <_Globbed_Compile Remove="ViewModels\StatisticsViewModel.cs" />
+    <_Globbed_Compile Remove="Views\BasePage.cs" />
+    <_Globbed_Compile Remove="Views\BasePage.xaml.cs" />
+    <_Globbed_Compile Remove="Views\BlankPage1.xaml.cs" />
+    <_Globbed_Compile Remove="Views\BlankPage2.xaml.cs" />
+    <_Globbed_Compile Remove="Views\StatisticsView.xaml.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <_Globbled_Page Remove="Views\BasePage.xaml" />
+    <_Globbled_Page Remove="Views\BlankPage1.xaml" />
+    <_Globbled_Page Remove="Views\BlankPage2.xaml" />
+    <_Globbled_Page Remove="Views\StatisticsView.xaml" />
+  </ItemGroup>
+</Project>
